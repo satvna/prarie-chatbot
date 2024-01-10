@@ -14,12 +14,15 @@ from langchain_community.vectorstores import Pinecone
 
 index_name = pinecone.init(api_key=os.environ.get("PINECONE_API_KEY"), environment="gcp-starter")
 index = pinecone.Index(index_name)
+index_is_new = False
 
 #----- Create new vector database if one does not exist: ----
 try:
   index_info = pinecone.describe_index('example-index')
+  index_is_new = False
 except:
   index_info = pinecone.create_index("example-index", dimension=768)
+  index_is_new =  True
 
 #get existing vector count 
 print(index)
@@ -27,9 +30,11 @@ print(index)
 embeddings = HuggingFaceHubEmbeddings()
 
 # ----- Add info to vector store (if not already loaded) ----
-if(index_info.status['ready']):
+if(index_is_new == False):
+  print("Importing index...")
   docsearch = Pinecone.from_existing_index('example-index', embeddings)
 else: 
+  print("Creating index...")
   # ----- Splitting, embedding, and storing PDFs in Pinecone  -----
   documents = []
   for file in os.listdir('documents'):
