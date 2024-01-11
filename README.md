@@ -1,5 +1,11 @@
-# Blackland Prairie Planting Chatbot
-A program which takes questions and anwers them based on the information from the sources in the "documents" folder. 
+# Blackland Prairie Chatbot
+A program which takes questions and anwers them with information from the the "documents" folder. In this project, the documents and example queries asked regard information about the Blacklands Prarie of Central Texas, but it can be modified to suit your documents
+
+# How to use
+- Generate API keys for [Pinecone](https://www.pinecone.io/) and [Hugging Face](https://huggingface.co/). Rename the ".env-template" file ".env" and paste your keys in.
+- Run chatbot.py. Check your Pinecone console to make sure an index was created and the documents were loaded in properly.
+- When the terminal reads "Prompt:", you may type your question. You can also use prewritten prompts in the "prompts.py" file by adding an exclamation mark (!) before the name of the variable containing the prompt.
+- Exit by typing "q", "exit", "f", "quit". 
 
 # Sources
 - Blackland Prarie Ecological Region (https://tpwd.texas.gov/landwater/land/habitats/cross_timbers/ecoregions/blackland.phtml) - Texas Parks & Wildlife
