@@ -1,5 +1,5 @@
 # Prairie Chatbot
-A program which takes questions and anwers them with information from the the "documents" folder. In this project, the documents and example queries asked regard information about the Blackland Prarie of Central Texas, but it can be modified to suit own content.
+A program which takes questions and anwers them with information from the the "documents" folder. In this project, the documents and example queries asked regard information about the Blackland Prarie of Central Texas, but it can be modified to suit your own content.
 
 # How to use
 - Generate API keys for [Pinecone](https://www.pinecone.io/) and [Hugging Face](https://huggingface.co/). Rename the ".env-template" file ".env" and paste your keys in.
